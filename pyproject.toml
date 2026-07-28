@@ -8,3 +8,9 @@ dependencies = [
     "openai==2.44.0",
     "python-dotenv==1.1.0",
 ]
+
+[dependency-groups]
+dev = [
+    "debugpy>=1.8.21",
+    "python-lsp-server>=1.14.0",
+]
