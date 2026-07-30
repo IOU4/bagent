@@ -7,7 +7,6 @@ from openai.types import Completion, CompletionChoice, CompletionUsage
 from function_call import available_functions, call_function
 from system import system_prompt
 
-
 def main():
     load_dotenv()
     api_key = os.environ.get("OPENROUTER_API_KEY")
@@ -52,8 +51,15 @@ def main():
         else:
             print(response.choices[0].message.content)
 
-        return 
+        messages.append({
+            "role": "user",
+            "content": input('>> '),
+        })
+
     exit(1)
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        print("\nbye..gent!!")

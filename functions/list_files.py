@@ -1,5 +1,6 @@
 import os
-def get_files_info(working_directory: str, directory: str = "."):
+
+def list_files(working_directory: str, directory: str = "."):
     try:
         abs_dir = os.path.abspath(working_directory)
         target_dir = os.path.normpath(os.path.join(abs_dir, directory))
@@ -19,7 +20,7 @@ def get_files_info(working_directory: str, directory: str = "."):
     except Exception as e:
             return f'Error: Exception {str(e)}'
 
-schema_get_files_info = {
+schema_list_files = {
     "type": "function",
     "function": {
         "name": "get_files_info",

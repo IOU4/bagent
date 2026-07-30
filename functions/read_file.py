@@ -1,6 +1,6 @@
 import os
 
-def get_file_content(working_directory: str, file_path: str) -> str:
+def read_file(working_directory: str, file_path: str) -> str:
     MAX_CHARS = 10000
     try:
         abs_dir = os.path.abspath(working_directory)
@@ -20,7 +20,7 @@ def get_file_content(working_directory: str, file_path: str) -> str:
     except Exception as e:
         return f'Error: Exception {e}'
 
-schema_get_file_content = {
+schema_read_file = {
     "type": "function",
     "function": {
         "name": "get_file_content",

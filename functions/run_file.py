@@ -1,6 +1,6 @@
 import os
 import subprocess
-def run_python_file(working_directory: str, file_path: str, args: list[str] | None = None) -> str:
+def run_file(working_directory: str, file_path: str, args: list[str] | None = None) -> str:
     try:
         base_dir = os.path.abspath(working_directory)
         target_file = os.path.normpath(os.path.join(base_dir, file_path))
@@ -31,7 +31,7 @@ def run_python_file(working_directory: str, file_path: str, args: list[str] | No
     except Exception as e:
         return f'Error: Exception {e}'
 
-schema_run_python_file = {
+schema_run_file = {
     "type": "function",
     "function": {
         "name": "run_python_file",
