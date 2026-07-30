@@ -37,6 +37,6 @@ def call_function(tool_call, verbose: bool = False) -> dict:
     return {
         "role": "tool",
         "tool_call_id": tool_call.id,
-        "content": functionn('./calculator', **args)
+        "content": functionn('.', **args)
     }
 
